@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | 通知表所見自動生成</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">
+      <a href="index.html">KISEKI HATAKEYAMA</a>
+    </h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="index.html#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-32 pb-20 container mx-auto px-6">
+    <article class="max-w-4xl mx-auto">
+      <div class="mb-12">
+        <span class="text-indigo-400 font-mono tracking-widest text-sm uppercase">AI & LLM Integration</span>
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mt-2 mb-6">通知表所見自動生成</h2>
+        <p class="text-slate-400 text-lg">LLMを活用して、生徒の活動記録から高品質な通知表所見をドラフトするアプリケーションです。</p>
+      </div>
+
+      <div class="glass-card rounded-3xl overflow-hidden mb-16 shadow-2xl">
+        <img src="img/works-detail/FindingsGeneration1.png" alt="システム画面" class="w-full h-auto">
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 md:p-12 article-content">
+        <section>
+          <h3>URL</h3>
+          <div class="mt-4 flex flex-wrap gap-4">
+            <a href="https://github.com/KeyBow2525/school-remarks-app" target="_blank" rel="noopener" class="btn-action">
+              <span class="material-icons-outlined">code</span> View on GitHub
+            </a>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section>
+            <h3>制作期間</h3>
+            <p class="text-slate-400">2024.10 ─ 2024.12</p>
+          </section>
+          <section>
+            <h3>担当</h3>
+            <p class="text-slate-400">要件定義 / コーディング / プロンプトエンジニアリング</p>
+          </section>
+          <section>
+            <h3>使用技術</h3>
+            <p class="text-slate-400">Python / Django / Flask / Dify / Ollama / AI</p>
+          </section>
+        </div>
+
+        <section>
+          <h3>課題とコンセプト</h3>
+          <ul class="text-slate-400 space-y-2 mt-4 leading-relaxed list-none">
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>学期末及び年度末の成績・所見作成の業務改善</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>ブラウザ上で動くAIについて、個人情報保護等のセキュリティに関する懸念</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>作成した所見の誤字・脱字・文法等のチェック作業の負担軽減</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>各生徒のデータ管理</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>工夫した点・実績</h3>
+          <div class="text-slate-400 space-y-8 leading-relaxed mt-4">
+            <div>
+              <h4 class="text-white font-bold mb-3">Difyを利用することによるノーコードでのLLM調整の実現</h4>
+              <p>Difyをローカル環境にインストールし、Ollamaでモデルをダウンロードすることで、完全ローカルでのAI運用を可能にしつつ、ノーコードでLLMの動きを調整することができました。特に、ワークフローを構築することで、プロンプトに合わせて分岐させたり、分岐によってシステムプロンプトを設定できたりしました。システム側で設定することにより、不適切な表現を未然に防いだり、通知表用の文面に調整したりすることができました。</p>
+            </div>
+            <div>
+              <h4 class="text-white font-bold mb-3">成績処理における業務改善の実現</h4>
+              <p>成績処理のうち、特に所見作成は教員の大きな負担であり、初任者では年間数十時間に及ぶこともあります。AI活用は有効な解決策ですが、オンラインモデルでは機密情報の流出というセキュリティ課題や、生成データの保存・管理ができないといった問題から導入が阻滞していました。今回、ローカル環境で動作するシステムを構築し、データベースへの保存機能を実装したことで、安全性を確保しつつデータの蓄積・管理が可能となり、年度末の多忙な時期でも迅速な所見生成と大幅な業務改善を両立できました。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html#works" class="text-indigo-400 hover:text-white font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition-colors">
+          <span class="material-icons-outlined">west</span> Back to Works
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA.</p>
+  </footer>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

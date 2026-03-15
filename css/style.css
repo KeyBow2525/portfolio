@@ -1,0 +1,222 @@
+/* --------------------------------
+   共通変数
+--------------------------------- */
+:root {
+  --bg-dark: #020617;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --accent: #6366f1;
+}
+
+/* --------------------------------
+   ベーススタイル
+--------------------------------- */
+body {
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-dark);
+  color: #f8fafc;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 背景Canvasの固定配置 */
+#hero-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #020617 100%);
+}
+
+/* --------------------------------
+   コンポーネント
+--------------------------------- */
+
+/* グラスモーフィズムカード */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* グラデーションテキスト */
+.gradient-text {
+  background: linear-gradient(135deg, #fff 30%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ヒーローセクションのフロートアニメーション */
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* スキルセクションのアイコン表示 */
+.icon-display {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* スキルタグ */
+.skill-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.skill-tag:hover {
+  border-color: var(--accent);
+  color: white;
+  background: rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ワークスカードのホバーエフェクト */
+.work-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.work-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+.work-card img {
+  transition: transform 0.7s ease;
+}
+
+.work-card:hover img {
+  transform: scale(1.05);
+}
+
+/* --------------------------------
+   Works詳細ページ
+--------------------------------- */
+
+/* 記事コンテンツの見出し */
+.article-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* セクション間の余白を詰める */
+.article-content > section,
+.article-content > div {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.article-content > section:first-child,
+.article-content > div:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* article-content内のsectionにはセクション全体のpaddingを当てない */
+.article-content section {
+  padding: 20px 0;
+}
+
+/* アクションボタン */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #6366f1;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.3);
+}
+
+.btn-action:hover {
+  background-color: #818cf8;
+  transform: translateY(-2px);
+}
+
+/* リンクリスト */
+.link-list {
+  list-style: none;
+  padding: 0;
+}
+
+.link-list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link-list li a:hover {
+  color: white;
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* --------------------------------
+   ユーティリティ
+--------------------------------- */
+.text-gradient {
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* セクションのパディング */
+section {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+}

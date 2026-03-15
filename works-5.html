@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | ローカル画像生成実践</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">
+      <a href="index.html">KISEKI HATAKEYAMA</a>
+    </h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="index.html#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-32 pb-20 container mx-auto px-6">
+    <article class="max-w-4xl mx-auto">
+      <div class="mb-12">
+        <span class="text-indigo-400 font-mono tracking-widest text-sm uppercase">AI Research</span>
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mt-2 mb-6">ローカルでの画像生成実践</h2>
+        <p class="text-slate-400 text-lg">Qwen2-VL (Qwen-Image) を活用し、ローカル環境でマルチモーダルAIによる画像解析・生成を調査しました。</p>
+      </div>
+
+      <div class="glass-card rounded-3xl overflow-hidden mb-16 shadow-2xl">
+        <img src="img/works-detail/qwen-image.png" alt="ローカルでの画像生成画面" class="w-full h-auto">
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 md:p-12 article-content">
+        <section>
+          <h3>実践の記録 (note)</h3>
+          <div class="mt-4 flex flex-wrap gap-4">
+            <a href="https://note.com/kiseki2525/n/n81b04e3b8ed3?sub_rt=share_pw" target="_blank" rel="noopener" class="btn-action">
+              <span class="material-icons-outlined">article</span> 記事を読む
+            </a>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section>
+            <h3>制作期間</h3>
+            <p class="text-slate-400">2025.7 ─ 2025.8</p>
+          </section>
+          <section>
+            <h3>担当</h3>
+            <p class="text-slate-400">要件定義 / コーディング / ドキュメント作成</p>
+          </section>
+          <section>
+            <h3>使用技術</h3>
+            <p class="text-slate-400">Python / Django / HuggingFace / AI</p>
+          </section>
+        </div>
+
+        <section>
+          <h3>課題とコンセプト</h3>
+          <ul class="text-slate-400 space-y-2 mt-4 leading-relaxed list-none">
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>ローカル環境でのAI活用の調査</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>M3 Ultra Mac Studioを活用することによる、画像生成AIの活用可能性を測ること</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>複雑なプロンプトに対する推論精度の実証検証</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>画像生成AIを活用した、より高度な生成AIアプリをローカルで運用する方法の模索</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>Apple Silicon M3 Ultraと512GBのユニファイドメモリの力を最大限発揮すること</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>工夫した点・実績</h3>
+          <div class="text-slate-400 space-y-8 leading-relaxed mt-4">
+            <div>
+              <h4 class="text-white font-bold mb-3">Apple Siliconに最適化された技術スタック（PyTorch + MPS）の選定と、エラー回避のための細やかな環境設定</h4>
+              <p>M3 Ultraの性能を最大限に引き出すため、MLXやTensorFlow等の選択肢を比較検討した上で、Qwen-Imageのような拡散モデルにおいて最も安定性が高く、コミュニティ支援が厚い「PyTorch + MPSバックエンド」を採用しました。また、開発途上のMPSで未実装の演算が発生することを見越し、環境変数 <code class="text-indigo-300 text-sm">PYTORCH_ENABLE_MPS_FALLBACK=1</code> を設定して自動的にCPUへフォールバックさせる工夫により、エラーを回避し、確実にワークフローを継続させる環境を構築できました。</p>
+            </div>
+            <div>
+              <h4 class="text-white font-bold mb-3">M3 Ultra Mac Studioを用いたローカル環境でのマルチモーダルAI運用と、プロンプトに忠実な高品質画像生成の成功</h4>
+              <p>M3 Ultra Mac Studioと512GBのユニファイドメモリという、AIワークロードに最適化された超高性能なローカル環境において、マルチモーダル基盤モデル「Qwen-Image」のデプロイと推論に成功しました。複雑な指示（甲冑を着たアヒルの侍や特定の文字が書かれた看板など）を含むプロンプトから、指定通りの画像を正確に生成できることを実証し、従来のデータ転送のボトルネックを解消してモデル全体をメモリに保持した状態での効率的なAI運用体制を確立しています。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html#works" class="text-indigo-400 hover:text-white font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition-colors">
+          <span class="material-icons-outlined">west</span> Back to Works
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA.</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | プログラミング授業実践</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">
+      <a href="index.html">KISEKI HATAKEYAMA</a>
+    </h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="index.html#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-32 pb-20 container mx-auto px-6">
+    <article class="max-w-4xl mx-auto">
+      <div class="mb-12 text-left">
+        <span class="text-indigo-400 font-mono tracking-widest text-sm uppercase">Educational Practice</span>
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mt-2 mb-6">プログラミング授業実践</h2>
+        <p class="text-slate-400 text-lg leading-relaxed">
+          中学校でのプログラミング学習における、オセロゲーム制作の実践記録です。
+        </p>
+      </div>
+
+      <div class="glass-card rounded-3xl overflow-hidden mb-16" style="background-color: #ffffff;">
+        <iframe
+          src="othello.html"
+          title="オセロゲーム"
+          class="w-full border-0"
+          style="height: 650px; background-color: #ffffff;"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 md:p-12 article-content">
+
+        <section>
+          <h3>授業資料（アーカイブ）</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 link-list">
+            <li><a href="https://drive.google.com/file/d/1Yx5Mr0gJWM9dLRLFcDvZ9klkBSB0ZDgB/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>1時間目：アルゴリズムの基本</a></li>
+            <li><a href="https://drive.google.com/file/d/11iZRyGJVxRHb3zLT3zxdQ3bYushH5O-F/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>2時間目：HTML/CSSの基礎</a></li>
+            <li><a href="https://drive.google.com/file/d/16JhP4fEgZxuVzm3bthC7bGYi9N5G37No/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>3時間目：JavaScriptの導入</a></li>
+            <li><a href="https://drive.google.com/file/d/1Abs07-hduoL67K7-HMiLmHEYOuJtGlbw/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>4時間目：盤面の描画ロジック</a></li>
+            <li><a href="https://drive.google.com/file/d/11IyawVTz1Va88IyyA3llJasIYzXz7tcP/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>5時間目：石を置く・裏返す処理</a></li>
+            <li><a href="https://drive.google.com/file/d/1HXF9rnDGOchxPnWvuIO03JXgEVO4yuWt/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>6時間目：勝敗判定の実装</a></li>
+            <li><a href="https://drive.google.com/file/d/1EeVW084MstK3H79cs5Tu-V5ehADS1CHR/view?usp=sharing" target="_blank" rel="noopener"><span class="material-icons-outlined text-sm">arrow_forward</span>7時間目：UIの調整とデバッグ</a></li>
+          </ul>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/5 pt-12">
+          <section>
+            <h3>制作期間</h3>
+            <p class="text-slate-400">2025.6 ─ 2025.10</p>
+          </section>
+          <section>
+            <h3>担当</h3>
+            <p class="text-slate-400">要件定義 / 授業構想 / コーディング</p>
+          </section>
+          <section>
+            <h3>使用技術・環境</h3>
+            <p class="text-slate-400">HTML / CSS / JavaScript / Google Colab</p>
+          </section>
+        </div>
+
+        <section>
+          <h3>課題とコンセプト</h3>
+          <ul class="text-slate-400 space-y-2 mt-4 leading-relaxed list-none">
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>実践的なプログラミング学習ができる授業づくり</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>スクラッチでのプログラミング学習・iPadでの制作活動の限界を超えること</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>クラウド上での運用によるファイル保存に関するリスク軽減</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>7時間構成で、各時間で学ぶべきポイントを設定すること</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>工夫した点・実績</h3>
+          <div class="text-slate-400 space-y-8 leading-relaxed mt-4">
+            <div>
+              <h4 class="text-white font-bold mb-3">段階を踏んだ授業構成とハードウェアに依存しない制作活動の実現</h4>
+              <p>段階を踏みながら制作できるようコードを分けて作成し、その授業内にポイントとなるコードを押さえながら進められるよう工夫しました。また、学校ごとにハードウェアが異なるため、ブラウザ上で実行できるGoogle Colabを用いることで、環境に依存しない授業づくりを実現しました。授業構想時の学校で導入されていたのがiPadだったため、一部のデザインはiPadでの実行を想定しています。</p>
+            </div>
+            <div>
+              <h4 class="text-white font-bold mb-3">生徒の制作意欲向上と専門外担当授業の負担軽減</h4>
+              <p>ただ制作するだけでなく、ポイントを押さえて授業を組み立てて実施したため、HTMLやCSS、JavaScriptがどういう役割を果たしているのか、どのコードを書き替えることでアレンジができるかが理解できていました。これにより、完成後も意欲を持って授業に参加し、周囲の生徒と教え合う姿も多く見られました。また、技術科の教諭不足により専門外の教員が担当していた状況において、その負担軽減にもつながりました。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html#works" class="text-indigo-400 hover:text-white font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition-colors">
+          <span class="material-icons-outlined">west</span> Back to Works
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA.</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

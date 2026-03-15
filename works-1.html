@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | 調査書作成システム</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">
+      <a href="index.html">KISEKI HATAKEYAMA</a>
+    </h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="index.html#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-32 pb-20 container mx-auto px-6">
+    <article class="max-w-4xl mx-auto">
+      <div class="mb-12">
+        <span class="text-indigo-400 font-mono tracking-widest text-sm uppercase">Business Automation</span>
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mt-2 mb-6">調査書作成システム</h2>
+        <p class="text-slate-400 text-lg">高等学校入試に使用する調査書を効率的に作成するための業務支援システムです。</p>
+      </div>
+
+      <div class="glass-card rounded-3xl overflow-hidden mb-16 shadow-2xl">
+        <img src="img/works-detail/MakeReports.gif" alt="調査書作成システム画面" class="w-full h-auto">
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 md:p-12 article-content">
+        <section>
+          <h3>URL</h3>
+          <p class="text-slate-400">現在公開準備中です。</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section>
+            <h3>制作期間</h3>
+            <p class="text-slate-400">2025.11 ─ 2026.2</p>
+          </section>
+          <section>
+            <h3>担当</h3>
+            <p class="text-slate-400">要件定義 / コーディング</p>
+          </section>
+          <section>
+            <h3>使用技術</h3>
+            <p class="text-slate-400">VBA / Excel</p>
+          </section>
+        </div>
+
+        <section>
+          <h3>課題とコンセプト</h3>
+          <ul class="text-slate-400 space-y-2 mt-4 leading-relaxed list-none">
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>調査書様式の更新と調査書作成における業務負担軽減</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>印刷時の作業効率を向上させ、印刷用紙のロスを削減させること</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>教員がより重要な「生徒の評価・所見の推敲」に集中できる環境を構築</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>誰でも迷わず、必要な分だけを即座に処理できるUIの実現</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>工夫した点・実績</h3>
+          <div class="text-slate-400 space-y-8 leading-relaxed mt-4">
+            <div>
+              <h4 class="text-white font-bold mb-3">名簿に登録された名前で表示し、チェックボックスで選択できるように</h4>
+              <p>出席番号と名簿に登録された名前を表示し、登録されていない番号ではグレーアウトして選択できないようにしました。また、全選択と選択解除を実装し、全員印刷したり、解除したりする際の手間を省くようにしました。直感的に印刷の処理が可能になり、迷わず必要な分だけを即座に処理できるUIが実現できました。</p>
+            </div>
+            <div>
+              <h4 class="text-white font-bold mb-3">業務改善と印刷用紙ロスの削減</h4>
+              <p>印刷したい生徒を個別に選択できる機能を実装したことで、進路状況に応じた柔軟な出力が可能となりました。従来は、生徒ごとに印刷範囲を指定して表裏を別々に印刷し、さらに両面コピーし直すという極めて煩雑な工程を要していましたが、一連の操作を一度で完結させることで、作業時間は大幅に短縮されました。また、機密保持のために発生していた片面印刷後の不要な用紙の裁断処理も不要となり、紙資源のロス削減と環境負荷の低減にも寄与しています。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html#works" class="text-indigo-400 hover:text-white font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition-colors">
+          <span class="material-icons-outlined">west</span> Back to Works
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA.</p>
+  </footer>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

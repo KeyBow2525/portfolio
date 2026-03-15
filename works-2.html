@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | 自動席替えシステム</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">
+      <a href="index.html">KISEKI HATAKEYAMA</a>
+    </h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="index.html#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-32 pb-20 container mx-auto px-6">
+    <article class="max-w-4xl mx-auto">
+      <div class="mb-12">
+        <span class="text-indigo-400 font-mono tracking-widest text-sm uppercase">Classroom Support</span>
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mt-2 mb-6">自動席替えシステム</h2>
+        <p class="text-slate-400 text-lg">学級活動を盛り上げ、教員の事務作業を削減する自動席替えアプリケーションです。</p>
+      </div>
+
+      <div class="glass-card rounded-3xl overflow-hidden mb-16 shadow-2xl">
+        <img src="img/works-detail/SeatingChart.gif" alt="席替えシステム画面" class="w-full h-auto">
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 md:p-12 article-content">
+        <section>
+          <h3>URL</h3>
+          <p class="text-slate-400">現在公開準備中です。</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section>
+            <h3>制作期間</h3>
+            <p class="text-slate-400">2024.11 ─ 2025.1</p>
+          </section>
+          <section>
+            <h3>担当</h3>
+            <p class="text-slate-400">要件定義 / コーディング</p>
+          </section>
+          <section>
+            <h3>使用技術</h3>
+            <p class="text-slate-400">VBA / Excel</p>
+          </section>
+        </div>
+
+        <section>
+          <h3>課題とコンセプト</h3>
+          <ul class="text-slate-400 space-y-2 mt-4 leading-relaxed list-none">
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>席替えのデジタル化と手打ちでの座席表作成の業務改善</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>不登校生徒や視力が低い生徒に対して配慮しつつ、座席をランダムに配置できること</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>その他座席を固定したい生徒は個別に固定できること</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>学級の人数等に合わせて柔軟に座席の設定ができること</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>工夫した点・実績</h3>
+          <div class="text-slate-400 space-y-8 leading-relaxed mt-4">
+            <div>
+              <h4 class="text-white font-bold mb-3">ランダムのように見せつつ、生徒には見えない場所で固定する場所を設定できるように</h4>
+              <p>ボタン1つで座席をランダムに表示しつつ、裏側の指定用テーブルと連動して最終的な配置を決定するシステムを構築しました。ストップボタン押下時に、設定した生徒を指定した席へ配置できるほか、配慮が必要な生徒を「視力行・列」の範囲内に優先配置する機能も備えています。これにより、視力への配慮や人間関係のトラブル対応、不登校生徒の要望など、個別の事情に応じた柔軟な調整が可能になりました。</p>
+            </div>
+            <div>
+              <h4 class="text-white font-bold mb-3">座席表作成の業務削減とUD化の実現</h4>
+              <p>従来の席替えは、くじ引き後に手動で座席表を作成しており、教員の大きな事務負担となっていました。ボタン一つで席替えと座席表作成が完結するシステムを実装したところ、大幅な業務効率化に成功しました。また、番号の照らし合わせに困難を感じていた生徒が、モニターに表示された自分の名前の場所へ行くだけという単純なルールになったことで、混乱なくスムーズに移動できるようになり、単なる効率化にとどまらずUD化との両立を果たす結果となりました。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html#works" class="text-indigo-400 hover:text-white font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition-colors">
+          <span class="material-icons-outlined">west</span> Back to Works
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA.</p>
+  </footer>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

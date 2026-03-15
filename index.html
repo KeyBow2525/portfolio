@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="教育現場の課題を技術で解決する。畠山葵汐のポートフォリオサイトです。VBA・Python・AIを活用した校務改善ツールや授業実践をまとめています。">
+  <meta property="og:title" content="KISEKI HATAKEYAMA | Portfolio">
+  <meta property="og:description" content="Teacher × Developer。VBA・Python・AIを活用した校務改善ツールや授業実践をまとめています。">
+  <meta property="og:url" content="https://keybow2525.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://keybow2525.github.io/portfolio/img/portfolio.png">
+  <title>KISEKI HATAKEYAMA | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <!-- Material Icons を使用 -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 外部CSSの取り込み -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome (ブランドアイコン用) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">KISEKI HATAKEYAMA</h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+      <div class="hero-float">
+        <p class="text-indigo-400 font-mono tracking-[0.5em] uppercase mb-6 text-sm md:text-base">Teacher × Developer</p>
+        <h2 class="text-6xl md:text-9xl font-black mb-8 leading-[1.1] tracking-tighter gradient-text uppercase">
+          現場の課題を<br>技術で解決する。
+        </h2>
+        <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12 font-light">
+          教育現場の「不」を解消し、より創造的な時間を作るための<br class="hidden md:block">ソリューションを設計・開発しています。
+        </p>
+        <div class="flex flex-col md:flex-row gap-6 justify-center">
+          <a href="#works" class="bg-indigo-600 hover:bg-indigo-500 text-white px-12 py-5 rounded-full font-black text-lg shadow-lg shadow-indigo-500/25 transition-all hover:scale-105">
+            実績を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKS セクション: 実績は「写真画像」を表示 -->
+    <section id="works" class="py-32 container mx-auto px-6">
+      <h2 class="text-4xl md:text-6xl font-black gradient-text mb-16 uppercase">WORKS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Work 1 -->
+        <a href="works-1.html" class="glass-card group overflow-hidden block rounded-3xl">
+          <div class="aspect-video overflow-hidden">
+            <img src="img/works/MakeReports.png" alt="調査書作成システム" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-2">調査書作成システム</h3>
+            <p class="text-slate-400 text-sm">VBAによる校務自動化ツール</p>
+          </div>
+        </a>
+        <!-- Work 2 -->
+        <a href="works-2.html" class="glass-card group overflow-hidden block rounded-3xl">
+          <div class="aspect-video overflow-hidden">
+            <img src="img/works/SeatingChart.png" alt="自動席替えシステム" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-2">自動席替えシステム</h3>
+            <p class="text-slate-400 text-sm">学級経営を楽しくするVBAツール</p>
+          </div>
+        </a>
+        <!-- Work 3 -->
+        <a href="works-3.html" class="glass-card group overflow-hidden block rounded-3xl">
+          <div class="aspect-video overflow-hidden">
+            <img src="img/works/othello.png" alt="プログラミング授業実践" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-2">プログラミング授業実践</h3>
+            <p class="text-slate-400 text-sm">オセロ制作を通じた探究学習</p>
+          </div>
+        </a>
+        <!-- Work 4 -->
+        <a href="works-4.html" class="glass-card group overflow-hidden block rounded-3xl">
+          <div class="aspect-video overflow-hidden">
+            <img src="img/works/FindingsGeneration.png" alt="総合所見自動生成" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-2">総合所見自動生成アプリ</h3>
+            <p class="text-slate-400 text-sm">ローカルLLM×DjangoによるAI活用</p>
+          </div>
+        </a>
+        <!-- Work 5 -->
+        <a href="works-5.html" class="glass-card group overflow-hidden block rounded-3xl">
+          <div class="aspect-video overflow-hidden">
+            <img src="img/works/qwen-image.png" alt="ローカル画像生成" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-2">ローカル画像生成実践</h3>
+            <p class="text-slate-400 text-sm">Qwen2-VL等を用いた画像生成・理解</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SKILLS セクション: 写真を使用せず「アイコン（Webフォント）」を表示 -->
+    <section id="skill" class="py-32 bg-slate-900/40">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-black mb-16 text-center tracking-widest uppercase">SKILLS</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-icons-outlined icon-display">terminal</span>
+            <span class="font-bold text-xs tracking-widest uppercase">PYTHON</span>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-icons-outlined icon-display">table_view</span>
+            <span class="font-bold text-xs tracking-widest uppercase">VBA</span>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-icons-outlined icon-display">code</span>
+            <span class="font-bold text-xs tracking-widest uppercase">HTML / CSS</span>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-icons-outlined icon-display">javascript</span>
+            <span class="font-bold text-xs tracking-widest uppercase">JavaScript</span>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-icons-outlined icon-display">dns</span>
+            <span class="font-bold text-xs tracking-widest uppercase">Django / Flask</span>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-icons-outlined icon-display">psychology</span>
+            <span class="font-bold text-xs tracking-widest uppercase">AI / Dify</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT セクション: 人物の紹介なので「写真画像」を表示 -->
+    <section id="about" class="py-32 container mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+        <!-- Profile Photo -->
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+          <div class="relative w-64 h-64 shrink-0 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
+            <img src="img/about.JPG" alt="畠山 葵汐" class="w-full h-full object-cover">
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <h2 class="text-4xl font-black gradient-text mb-4 uppercase">ABOUT</h2>
+          <h3 class="text-2xl font-black text-white">畠山 葵汐（KISEKI HATAKEYAMA）</h3>
+          <div class="space-y-4 text-slate-400 leading-relaxed max-w-2xl">
+            <p>
+              教育現場での実務経験を活かし、プログラミングやAI技術を用いて業務改善や授業実践に取り組んでおります。
+            </p>
+            <p>
+              校務支援システム（VBA）の開発や、LLMを活用した通知表所見生成ツールの構築、さらには中学校でのプログラミング教育の実踐など、「現場が本当に必要としているもの」を形にすることをモットーに活動しています。
+            </p>
+            <p>
+              何事にも興味を持って貪欲に学び、習得するのが私の強みです。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT セクション: 写真を使用せず「アイコン（Webフォント）」を表示 -->
+    <section id="contact" class="py-32 bg-slate-900/40">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-black mb-10 tracking-widest uppercase">CONTACT</h2>
+        <p class="text-slate-400 mb-12 max-w-lg mx-auto leading-relaxed">
+          お問い合わせは、<br class="md:hidden">メールまたはSNSにてお願いいたします。
+        </p>
+        <div class="flex justify-center gap-10">
+          <!-- Mail Icon -->
+          <a href="mailto:miracle.key2525@gmail.com" class="group flex flex-col items-center">
+            <div class="w-20 h-20 glass-card rounded-full flex items-center justify-center mb-4 group-hover:border-indigo-400 group-hover:bg-white/5 transition-all">
+              <span class="material-icons-outlined text-4xl text-white">mail</span>
+            </div>
+            <span class="text-xs font-bold tracking-widest text-slate-500 group-hover:text-indigo-400 transition-colors">MAIL</span>
+          </a>
+          <!-- Instagram Icon -->
+          <a href="https://www.instagram.com/hatakeyama1115?igsh=b3oydzV1OGVodTEz&utm_source=qr" target="_blank" class="group flex flex-col items-center">
+            <div class="w-20 h-20 glass-card rounded-full flex items-center justify-center mb-4 group-hover:border-pink-500 group-hover:bg-white/5 transition-all">
+              <i class="fa-brands fa-instagram text-4xl text-white"></i>
+            </div>
+            <span class="text-xs font-bold tracking-widest text-slate-500 group-hover:text-pink-500 transition-colors">INSTAGRAM</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 外部JSの取り込み (jQuery + script.js) -->
+  <script data-cfasync="false"
