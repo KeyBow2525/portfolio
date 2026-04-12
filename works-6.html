@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | MediaMaster Async</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ---- アーキテクチャ図用スタイル ---- */
+    .arch-diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      align-items: center;
+    }
+    .arch-layer {
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .arch-box {
+      width: 100%;
+      border: 1px solid rgba(99,102,241,0.4);
+      border-radius: 12px;
+      padding: 14px 20px;
+      background: rgba(99,102,241,0.08);
+      text-align: center;
+    }
+    .arch-box .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #818cf8;
+      margin-bottom: 4px;
+    }
+    .arch-box .title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .arch-box .desc {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .arch-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding: 6px 0;
+    }
+    .arch-arrow .arrow-line {
+      width: 2px;
+      height: 20px;
+      background: rgba(99,102,241,0.4);
+    }
+    .arch-arrow .arrow-head {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid rgba(99,102,241,0.6);
+    }
+    .arch-arrow .arrow-text {
+      font-size: 0.65rem;
+      color: #6366f1;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+    /* ---- フロー図 ---- */
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(99,102,241,0.2);
+      border: 1px solid rgba(99,102,241,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 900;
+      color: #818cf8;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    /* ---- ツール一覧 ---- */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .tool-card {
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.02);
+      transition: all 0.3s ease;
+    }
+    .tool-card:hover {
+      border-color: rgba(99,102,241,0.4);
+      background: rgba(99,102,241,0.06);
+    }
+    .tool-id {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #6366f1;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 4px;
+    }
+    .tool-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 2px;
+    }
+    .tool-desc {
+      font-size: 0.72rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="hero-canvas"></canvas>
+
+  <header class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center glass-card rounded-none border-t-0 border-x-0">
+    <h1 class="text-xl font-black tracking-[0.2em] text-white uppercase">
+      <a href="index.html">KISEKI HATAKEYAMA</a>
+    </h1>
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10 font-bold text-sm tracking-widest">
+        <li><a href="index.html#works" class="hover:text-indigo-400 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="hover:text-indigo-400 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-400 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-32 pb-20 container mx-auto px-6">
+    <article class="max-w-4xl mx-auto">
+
+      <!-- ヘッダー -->
+      <div class="mb-12">
+        <span class="text-indigo-400 font-mono tracking-widest text-sm uppercase">Web Application / FastAPI + React</span>
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mt-2 mb-6">MediaMaster Async</h2>
+        <p class="text-slate-400 text-lg leading-relaxed">
+          教育現場で必要とされるメディア変換・ファイル配布をまとめて解決するWebアプリです。<br class="hidden md:block">
+          HuggingFace Spaces上で動作し、ブラウザだけで変換処理を完結させます。
+        </p>
+      </div>
+
+      <!-- キービジュアル：アーキテクチャ概要カード -->
+      <div class="glass-card rounded-3xl overflow-hidden mb-16 shadow-2xl p-10 md:p-16">
+        <div class="text-center mb-10">
+          <p class="text-indigo-400 font-mono tracking-widest text-xs uppercase mb-2">System Architecture</p>
+          <h3 class="text-2xl font-black text-white">非同期処理による変換パイプライン</h3>
+        </div>
+        <div class="arch-diagram mx-auto">
+          <div class="arch-layer">
+            <div class="arch-box">
+              <div class="label">Frontend</div>
+              <div class="title">React（index.html）</div>
+              <div class="desc">ツール選択 → ファイルアップロード → ポーリング</div>
+            </div>
+          </div>
+          <div class="arch-arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-text">POST /api/convert</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-box">
+              <div class="label">Backend</div>
+              <div class="title">FastAPI（app.py）</div>
+              <div class="desc">バリデーション → BackgroundTasks → task_id 返却</div>
+            </div>
+          </div>
+          <div class="arch-arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-text">tool_id で振り分け</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-box" style="border-color: rgba(99,102,241,0.6); background: rgba(99,102,241,0.12);">
+              <div class="label">Tools Layer</div>
+              <div class="title">tools/ モジュール群</div>
+              <div class="desc">audio_tools / image_tools / file_tools</div>
+            </div>
+          </div>
+          <div class="arch-arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-text">GET /api/status/{task_id}</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-box">
+              <div class="label">Storage</div>
+              <div class="title">HuggingFace Datasets</div>
+              <div class="desc">配布ファイルの管理（private リポジトリ）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 本文 -->
+      <div class="glass-card rounded-3xl p-8 md:p-12 article-content">
+
+        <!-- URL -->
+        <section>
+          <h3>URL / 記事</h3>
+          <div class="mt-4 flex flex-wrap gap-4">
+            <a href="https://note.com/kiseki2525" target="_blank" rel="noopener" class="btn-action">
+              <span class="material-icons-outlined">article</span> 開発記事を読む（note）
+            </a>
+          </div>
+          <p class="text-slate-500 text-xs mt-3">※ アプリ本体は現在公開準備中です。noteの記事URLは準備でき次第更新します。</p>
+        </section>
+
+        <!-- メタ情報 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section>
+            <h3>制作期間</h3>
+            <p class="text-slate-400">2025.12 ─ 2026.3</p>
+          </section>
+          <section>
+            <h3>担当</h3>
+            <p class="text-slate-400">要件定義 / 設計 / コーディング / ドキュメント作成</p>
+          </section>
+          <section>
+            <h3>使用技術</h3>
+            <p class="text-slate-400">Python / FastAPI / React / Docker / HuggingFace Spaces</p>
+          </section>
+        </div>
+
+        <!-- 課題とコンセプト -->
+        <section>
+          <h3>課題とコンセプト</h3>
+          <ul class="text-slate-400 space-y-2 mt-4 leading-relaxed list-none">
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>教員から要望が多数寄せられたメディア変換ニーズ（HEIC・M4A・MP4 など）を1か所にまとめたい</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>変換処理が長時間になっても画面がフリーズしない、快適なUXの実現</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>機能追加コストを最小化するモジュール設計（新機能を4ステップで追加できる構造）</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>個人情報を含む配布ファイルを安全に管理・配信する仕組みの構築</li>
+            <li class="flex gap-2"><span class="text-indigo-400 shrink-0">▸</span>インフラ費用ゼロで運用できるプラットフォームの選定</li>
+          </ul>
+        </section>
+
+        <!-- 機能一覧 -->
+        <section>
+          <h3>実装した機能</h3>
+          <div class="tool-grid mt-4">
+            <div class="tool-card">
+              <div class="tool-id">heic-jpg</div>
+              <div class="tool-name">HEIC → JPG</div>
+              <div class="tool-desc">iPhone撮影データをJPEGに一括変換</div>
+            </div>
+            <div class="tool-card">
+              <div class="tool-id">m4a-mp3</div>
+              <div class="tool-name">M4A → MP3</div>
+              <div class="tool-desc">Apple録音データをMP3に変換</div>
+            </div>
+            <div class="tool-card">
+              <div class="tool-id">mp4-mp3</div>
+              <div class="tool-name">動画 → MP3</div>
+              <div class="tool-desc">動画から音声のみを抽出</div>
+            </div>
+            <div class="tool-card">
+              <div class="tool-id">jpeg-pdf</div>
+              <div class="tool-name">画像 → PDF</div>
+              <div class="tool-desc">複数画像を1つのPDFに結合</div>
+            </div>
+            <div class="tool-card">
+              <div class="tool-id">pdf-png</div>
+              <div class="tool-name">PDF → PNG</div>
+              <div class="tool-desc">PDFの各ページを画像に変換</div>
+            </div>
+            <div class="tool-card">
+              <div class="tool-id">file-download</div>
+              <div class="tool-name">ファイル配布</div>
+              <div class="tool-desc">パスワード認証後にZIPで配信</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 工夫した点 -->
+        <section>
+          <h3>工夫した点・技術的なこだわり</h3>
+          <div class="text-slate-400 space-y-8 leading-relaxed mt-4">
+
+            <div>
+              <h4 class="text-white font-bold mb-3">非同期処理とポーリングによる快適なUXの実現</h4>
+              <p>メディア変換は処理時間が数秒〜数十秒に及ぶため、同期処理では画面がフリーズしてしまいます。FastAPIの<code class="text-indigo-300 text-sm">BackgroundTasks</code>を活用し、リクエスト受付後に即座に<code class="text-indigo-300 text-sm">task_id</code>を返却、フロントエンドが定期的にステータスをポーリングする非同期アーキテクチャを採用しました。処理中もUIが操作可能な状態を保ち、完了次第ダウンロードリンクが表示される、ストレスのない体験を実現しています。</p>
+            </div>
+
+            <div>
+              <h4 class="text-white font-bold mb-3">4ステップで機能追加できるモジュール設計</h4>
+              <p><code class="text-indigo-300 text-sm">tools/</code>配下に機能を独立したモジュールとして分離し、<code class="text-indigo-300 text-sm">app.py</code>はルーティングのみを担当する設計にしました。新機能の追加は①ツールファイル作成、②tool_id登録、③分岐1行追加、④フロントカード追加の4ステップで完結します。教員から新たな変換ニーズが上がった際に、最小限のコストで対応できる拡張性を意識した設計です。</p>
+            </div>
+
+            <div>
+              <h4 class="text-white font-bold mb-3">多層的なセキュリティ設計</h4>
+              <p>1ファイルあたり100MBの上限チェック、<code class="text-indigo-300 text-sm">asyncio.Semaphore</code>による同時処理数の制限（最大3件）、<code class="text-indigo-300 text-sm">tool_id</code>・<code class="text-indigo-300 text-sm">output_format</code>のバリデーションをすべてバックグラウンドタスクに到達する前に処理することで、堅牢なシステムを構築しました。また、ファイル配布機能では<code class="text-indigo-300 text-sm">os.path.basename()</code>によるパストラバーサル対策も実施しています。</p>
+            </div>
+
+            <div>
+              <h4 class="text-white font-bold mb-3">HuggingFace Datasetsを活用したセキュアなファイル配布</h4>
+              <p>配布ファイルはGitリポジトリに含めず、privateリポジトリのHuggingFace Datasetsで管理しています。コンテナ起動時に<code class="text-indigo-300 text-sm">startup.py</code>がファイルを取得してローカルに配置する設計で、ファイルの更新は「Restart Space」のみで完結します。パスワードはHFS Secretsで管理し、フロントエンドには一切渡らないため、ソースコードを公開しても突破できない認証フローを実現しました。</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 新機能追加フロー -->
+        <section>
+          <h3>新機能追加フロー</h3>
+          <div class="mt-4">
+            <div class="flow-step">
+              <div class="flow-num">1</div>
+              <div>
+                <p class="text-white font-bold text-sm"><code class="text-indigo-300">tools/xxx_tools.py</code> を作成</p>
+                <p class="text-slate-400 text-sm mt-1">変換ロジックを独立したファイルに実装する</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-num">2</div>
+              <div>
+                <p class="text-white font-bold text-sm"><code class="text-indigo-300">VALID_TOOL_IDS</code> に tool_id を追加</p>
+                <p class="text-slate-400 text-sm mt-1">app.py のバリデーションリストに1行追加するだけ</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-num">3</div>
+              <div>
+                <p class="text-white font-bold text-sm"><code class="text-indigo-300">process_task()</code> に分岐を1行追加</p>
+                <p class="text-slate-400 text-sm mt-1">振り分けロジックへ elif を1件追記する</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-num">4</div>
+              <div>
+                <p class="text-white font-bold text-sm"><code class="text-indigo-300">TOOLS</code> 配列にカードを1件追加</p>
+                <p class="text-slate-400 text-sm mt-1">index.html のフロントエンド側に表示カードを追加する</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 成果 -->
+        <section>
+          <h3>成果と反響</h3>
+          <div class="text-slate-400 leading-relaxed mt-4 space-y-4">
+            <p>「iPhoneで撮った写真をパソコンで使えない」「授業の録音データをMP3にしたい」など、現場から上がっていた変換ニーズを1つのWebアプリに集約したことで、複数の業務課題を同時に解決しました。インストール不要でブラウザからアクセスするだけの手軽さが受け入れられ、実際に多くの教員から感謝の声が寄せられています。</p>
+            <p>インフラコストゼロのHuggingFace Spaces上での運用、ffmpeg・ImageMagickなどの外部ツールをDockerで自由にコントロールできる設計、モジュール化による拡張容易性など、技術的にも実践的なアーキテクチャ判断を数多く経験できたプロジェクトです。</p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html#works" class="text-indigo-400 hover:text-white font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition-colors">
+          <span class="material-icons-outlined">west</span> Back to Works
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center border-t border-white/5">
+    <p class="text-slate-500 font-mono text-sm tracking-widest uppercase">&copy; 2026 KISEKI HATAKEYAMA.</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
