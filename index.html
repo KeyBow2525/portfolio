@@ -36,6 +36,21 @@
         <li><a href="#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
       </ul>
     </nav>
+    <!-- ハンバーガーボタン（スマホのみ表示） -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none" aria-label="メニューを開く">
+      <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    </button>
+    <!-- ドロップダウンメニュー -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-card rounded-none border-t border-white/10 md:hidden">
+      <ul class="flex flex-col font-bold text-sm tracking-widest py-4">
+        <li><a href="#works" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">WORKS</a></li>
+        <li><a href="#skill" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">SKILL</a></li>
+        <li><a href="#about" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">ABOUT</a></li>
+        <li><a href="#contact" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </div>
   </header>
 
   <main>

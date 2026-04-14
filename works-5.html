@@ -26,6 +26,21 @@
         <li><a href="index.html#contact" class="hover:text-indigo-400 transition-colors text-white">CONTACT</a></li>
       </ul>
     </nav>
+    <!-- ハンバーガーボタン（スマホのみ表示） -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none" aria-label="メニューを開く">
+      <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    </button>
+    <!-- ドロップダウンメニュー -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-card rounded-none border-t border-white/10 md:hidden">
+      <ul class="flex flex-col font-bold text-sm tracking-widest py-4">
+        <li><a href="index.html#works" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">WORKS</a></li>
+        <li><a href="index.html#skill" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">SKILL</a></li>
+        <li><a href="index.html#about" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">ABOUT</a></li>
+        <li><a href="index.html#contact" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">CONTACT</a></li>
+      </ul>
+    </div>
   </header>
 
   <main class="pt-32 pb-20 container mx-auto px-6">
@@ -105,5 +120,36 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/script.js"></script>
+<script>
+    // ハンバーガーメニューの開閉
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBars = document.querySelectorAll('.menu-bar');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      // アイコンをXに変形
+      if (!isOpen) {
+        menuBars[0].style.transform = 'translateY(8px) rotate(45deg)';
+        menuBars[1].style.opacity = '0';
+        menuBars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+      } else {
+        menuBars[0].style.transform = '';
+        menuBars[1].style.opacity = '';
+        menuBars[2].style.transform = '';
+      }
+    });
+
+    // メニュー項目タップで閉じる
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBars[0].style.transform = '';
+        menuBars[1].style.opacity = '';
+        menuBars[2].style.transform = '';
+      });
+    });
+  </script>
 </body>
 </html>
