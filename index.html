@@ -43,7 +43,7 @@
       <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
     </button>
     <!-- ドロップダウンメニュー -->
-    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-card rounded-none border-t border-white/10 md:hidden">
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full rounded-none border-t border-white/10 md:hidden" style="background: rgba(2, 6, 23, 0.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
       <ul class="flex flex-col font-bold text-sm tracking-widest py-4">
         <li><a href="#works" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">WORKS</a></li>
         <li><a href="#skill" class="block px-8 py-4 hover:text-indigo-400 hover:bg-white/5 transition-colors text-white">SKILL</a></li>
@@ -255,3 +255,36 @@
   </footer>
 
   <!-- 外部JSの取り込み (jQuery
++ jQuery) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBars = document.querySelectorAll('.menu-bar');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      if (!isOpen) {
+        menuBars[0].style.transform = 'translateY(8px) rotate(45deg)';
+        menuBars[1].style.opacity = '0';
+        menuBars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+      } else {
+        menuBars[0].style.transform = '';
+        menuBars[1].style.opacity = '';
+        menuBars[2].style.transform = '';
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBars[0].style.transform = '';
+        menuBars[1].style.opacity = '';
+        menuBars[2].style.transform = '';
+      });
+    });
+  </script>
+</body>
+</html>
